@@ -7,6 +7,13 @@
     <div class="contenido-curriculum">
         <div class="ancho-acotado animate__animated animate__fadeIn animate__delay-1s">
 
+            <div class="container-loader" *ngIf="cargandoDatos()">
+                <app-loader-skt></app-loader-skt>
+                <app-loader-skt></app-loader-skt>
+                <app-loader-skt></app-loader-skt>
+                <app-loader-skt></app-loader-skt>
+            </div>
+
             <!-- Experiencia laboral -->
 
             <div *ngIf="!cargandoDatos()">

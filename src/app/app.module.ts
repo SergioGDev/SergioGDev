@@ -41,6 +41,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { LoaderSktComponent } from './components/loader-skt/loader-skt.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,7 @@ import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService
     ItemPortfolioComponent,
     ItemConocemeMejorComponent,
     LoaderComponent,
+    LoaderSktComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +81,7 @@ import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    NgxSkeletonLoaderModule,
 
     // Google Analitics
     provideFirebaseApp(() => initializeApp(environment.firebase)),

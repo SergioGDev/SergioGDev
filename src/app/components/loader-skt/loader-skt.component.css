@@ -1,0 +1,32 @@
+
+.container {
+    margin: 20px 8%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.left {
+    flex-grow: 1;
+}
+
+.right {
+    flex-grow: 8;
+}
+/* sm */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+
+    .container {
+        margin: 10px 5%;
+    }
+
+}
+
+/* xs */
+@media screen and (max-width: 599px) {
+
+    .container {
+        margin: 10px 1%;
+    }
+}

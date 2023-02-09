@@ -8,10 +8,6 @@ a {
     text-decoration: none;
 }
 
-.empresa-dos-container, .empresa-uno-container {
-    flex-flow: row wrap;
-}
-
 .logo-empresa {
     flex: 1 1 15%;
     box-sizing: border-box;
@@ -64,8 +60,10 @@ a {
 .empresa-dos-container {
     background-color: var(--color-blanco-fondo-80);
     padding: 10px;
-
+    display: flex;
     flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .fondo {
