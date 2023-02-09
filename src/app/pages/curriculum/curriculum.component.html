@@ -1,0 +1,63 @@
+<div>
+    
+    <!-- Panel Superior -->
+    <app-panel-superior [pathImagen]="pathImagen" [titulo]="titulo"></app-panel-superior>
+
+    <!-- Contenido del currículum -->
+    <div class="contenido-curriculum">
+        <div class="ancho-acotado animate__animated animate__fadeIn animate__delay-1s">
+
+            <!-- Experiencia laboral -->
+
+            <div *ngIf="!cargandoDatos()">
+                <div class="titulo-experiencia-laboral titulo-seccion ubuntu"> {{ tituloEmpleo | uppercase }} </div>
+        
+                <mat-divider class="divider-mb"></mat-divider>
+        
+                <div class="item-list-empleo">
+                    <div class="item-empleo" *ngFor="let item of vExperienciaLaboral">
+                        <app-item-curriculum-empleo [item]="item"></app-item-curriculum-empleo>
+                    </div>
+                </div>
+        
+                <!-- Formación académica -->
+                <div class="titulo-formacion titulo-seccion ubuntu"> {{ tituloFormacionAcademica | uppercase }} </div>
+        
+                <mat-divider class="divider-mb"></mat-divider>
+        
+                <div class="item-list-empleo">
+                    <div class="item-empleo" *ngFor="let item of vFormacionAcademica">
+                        <app-item-curriculum-formacion [item]="item"></app-item-curriculum-formacion>
+                    </div>
+                </div>
+        
+                <!-- Formación complementaria -->
+                <div class="titulo-formacion titulo-seccion ubuntu"> {{ tituloFormacionComplementaria | uppercase }} </div>
+        
+                <mat-divider class="divider-mb"></mat-divider>
+        
+                <div class="item-list-empleo">
+                    <div class="item-empleo" *ngFor="let item of vFormacionComplementaria">
+                        <app-item-curriculum-formacion [item]="item"></app-item-curriculum-formacion>
+                    </div>
+                </div>
+                
+                <!-- Idioma -->
+                <div class="titulo-formacion titulo-seccion ubuntu"> {{ tituloIdiomas | uppercase }} </div>
+        
+                <mat-divider class="divider-mb"></mat-divider>
+        
+                <div class="item-list-empleo">
+                    <div class="item-empleo" *ngFor="let item of vIdiomas">
+                        <app-item-curriculum-idioma [item]="item"></app-item-curriculum-idioma>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <app-footer></app-footer>
+
+
+</div>

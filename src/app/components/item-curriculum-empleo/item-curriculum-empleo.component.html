@@ -1,0 +1,57 @@
+<div class="item-empresa ibm-plex-sans-hebrew">
+
+    <div class="linea-tiempo">
+        <!-- <div class="circulo-tiempo"></div> -->
+    </div>
+
+    <div class="fondo">
+        <div class="contenido-empresa">
+    
+            <div class="linea-titulo">
+                <span class="nombre-empresa"> {{ item.empresa }} </span>
+                <span class="barra-puesto">|</span>
+                <span class="nombre-puesto"> {{ item.puesto }}. </span> 
+                <span class="duracion-empresa"> {{ item.fechaDesde }} - {{ item.fechaHasta }} </span>
+            </div>
+            
+            
+            <!-- Puesto -->
+            <!-- <div class="puesto" *ngIf="item.descripcionPuesto">
+                
+            </div> -->
+            
+            <!-- Descripción del puesto -->
+            <div class="descripcion-empleo" *ngIf="item.descripcionPuesto">
+                {{ item.descripcionPuesto }}
+            </div>
+            <!-- Descripción desarrollo de aplicaciones -->
+            <div class="tecnologias-empleo" *ngIf="item.descripcionAplicaciones">
+                <span class="subtitulo-tecnologia">Desarrollo de Aplicaciones:</span> {{ item.descripcionAplicaciones}}
+            </div>
+            
+            <!-- Descripción Frontend -->
+            <div class="tecnologias-empleo" *ngIf="item.descripcionFrontend">
+                <span class="subtitulo-tecnologia">Desarrollo Frontend:</span> {{ item.descripcionFrontend }}
+            </div>
+        
+            <!-- Descripción Backend -->
+            <div class="tecnologias-empleo" *ngIf="item.descripcionBackend">
+                <span class="subtitulo-tecnologia">Desarrollo Backend:</span> {{ item.descripcionBackend }}
+            </div>
+        
+            <!-- Otros datos referentes a desarrollos -->
+            <div class="tecnologias-empleo" *ngIf="item.otrosDatosDesarrollo">
+                <span class="subtitulo-tecnologia">Otros datos: </span> {{ item.otrosDatosDesarrollo }}
+            </div>
+        
+            <!-- Otra descripción -->
+            <div class="tecnologias-empleo" *ngIf="item.otraDescripcion">
+                <span class="subtitulo-tecnologia">Otras tecnologías utilizadas:</span> {{ item.otraDescripcion }}
+            </div>
+    
+        </div>
+    </div>
+
+    
+
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <a [href]="empresa.url" target="_blank">
+        
+            <div class="logo-empresa">
+                <img [src]="empresa.pathFoto" />
+            </div>
+        
+            <div class="descripcion-empresa">
+                <!-- Nombre -->
+                <div class="nombre-empresa ibm-plex-sans-hebrew">
+                    {{ empresa.nombre }}
+                </div>
+        
+                <!-- Localización -->
+                <div class="localizacion-empresa ibm-plex-sans-kr">
+                    {{ empresa.direccion }}
+                </div>
+        
+                <!-- Descripción empresa -->
+                <div class="texto-descripcion-empresa ibm-plex-sans-kr">
+                    {{ empresa.descripcion }}
+                </div>
+            </div>
+
+    </a>
+
+
+</div>

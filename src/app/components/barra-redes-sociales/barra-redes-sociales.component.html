@@ -1,0 +1,8 @@
+<span *ngFor="let redSocial of redesSociales"
+    class="icono-red-social" [title]="redSocial.title">
+    <a [href]="redSocial.src" target="_blank">
+        <img [src]="redSocial.pathUsed" 
+            (mouseout)="redSocial.pathUsed = redSocial.path" 
+            (mouseover)="redSocial.pathUsed = redSocial.pathHover"/>
+    </a>
+</span>

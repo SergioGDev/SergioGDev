@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class="foto-portfolio">
+        <img [src]="getPathFoto(item.pathImagen)" />
+    </div>
+
+    <div class="detalles-portfolio">
+        
+            <div class="nombre-proyecto source-code-pro">
+                {{ item.nombre }}
+            </div>
+        
+            <div class="path-web ibm-plex-sans-hebrew">
+                <a [href]="item.pathWeb" target="_blank">{{ item.pathWeb }}</a>
+            </div>
+        
+            <div class="descripcion-proyecto ibm-plex-sans-hebrew">
+                {{ item.descripcion }}
+            </div>
+        
+            <div class="tecnologias-utilizadas ibm-plex-sans-hebrew">
+        
+                <div class="tecnologias-frontend" *ngIf="item.tecnologiasFrontend">
+                    <span class="subtitulo-tecnologia">Frontend:</span> {{ item.tecnologiasFrontend }}
+                </div>
+        
+                <div class="tecnologias-backend" *ngIf="item.tecnologiasBackend">
+                    <span class="subtitulo-tecnologia">Backend:</span> {{ item.tecnologiasBackend }}
+                </div>
+        
+                <div class="otras-tecnologias" *ngIf="item.otrasTecnologias">
+                    <span class="subtitulo-tecnologia">Otras tecnologías:</span> {{ item.otrasTecnologias }}
+                </div>
+            </div>
+
+    </div>
+</div>

@@ -1,0 +1,97 @@
+.item-empresa {
+    display: flex;
+    flex-direction: row;
+}
+
+.linea-tiempo {
+    border-right: 2px solid var(--color-dorado-oscuro);
+    max-width: 1%;
+}
+
+.fondo {
+    margin: 15px 40px;
+    border-top: 2px solid var(--color-dorado-oscuro);
+    border-bottom: 2px solid var(--color-dorado-oscuro);
+    box-shadow: 3px 1px 6px var(--color-gris-fondo-50);
+
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-width: 97%;
+}
+
+.contenido-empresa {
+    padding: 10px;
+    background-color: var(--color-blanco-fondo-80);
+}
+
+.linea-titulo {
+    margin: 5px 0px 10px 0px;
+}
+
+.nombre-empresa {
+    color: var(--color-dorado-oscuro);
+    font-size: 1.4em;
+    margin-right: 10px;
+}
+
+.barra-puesto {
+    color: var(--color-gris-fondo-50);
+    font-size: 1.4em;
+}
+
+.nombre-puesto {
+    color: var(--color-negro-fondo);
+    margin: 0px 10px;
+    font-size: 1.2em;
+}
+
+.duracion-empresa {
+    color: var(--color-gris-fondo);
+    font-size: 0.9em;
+}
+
+.descripcion-empleo {
+    margin: 10px 15px 20px 15px;
+}
+
+.tecnologias-empleo {
+    color: var(--color-gris-fondo);
+    margin: 10px 25px;
+}
+
+.subtitulo-tecnologia {
+    color: var(--color-negro-fondo);
+    font-weight: 900;
+}
+
+/* lg */
+@media screen and (min-width: 1280px) {
+
+}
+
+/* md */
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+
+}
+
+/* sm */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+
+}
+
+/* xs */
+@media screen and (max-width: 599px) {
+
+    .linea-tiempo{
+        display: none;
+    }
+
+    .contenido-empresa {
+        margin: 15px 0px;
+    }
+
+    .fondo { 
+        margin: 15px 0px;
+        max-width: 99%;
+    }
+}

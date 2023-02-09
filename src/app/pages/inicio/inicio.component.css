@@ -1,0 +1,327 @@
+/* Panel superior */
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    flex: 1 1 100%;
+    box-sizing: border-box;
+}
+
+.panel-superior {
+    width: 100%;
+    background-image: url("../../../assets/img/fondo-codigo.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.cortina-transparente {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.spacer {
+    height: 150px;
+    width: 100%;
+}
+
+.nombre-dominio, 
+.texto-aux-panel-superior {
+    display: block;
+    width: 100%;
+    font-weight: 300;
+    text-align: center;
+    line-height: 50px;
+    z-index: 10;
+    color: var(--color-texto-blanco);
+}
+
+.nombre-container {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+.nombre-container img {
+    height: 100%;
+}
+
+.texto-aux-panel-superior {
+    font-size: 30px;
+    font-weight: 100;
+    padding-bottom: 80px;
+}
+
+/**********    INFORMACIÓN PERSONAL    **********/
+.informacion-personal {
+    background-image: url("../../../assets/img/fondo-red.jpg");
+}
+
+.informacion-personal>mat-divider {
+    border-top-color: var(--color-dorado-oscuro);
+}
+
+.container-quien-soy {
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    display: flex;
+    place-content: stretch center;
+    align-items: stretch;
+}
+
+.container-quien-soy .texto-descriptivo {
+    flex: 1 1 80%;
+    box-sizing: border-box;
+    max-width: 80%;
+}
+
+.container-quien-soy .foto-cara {
+    flex: 1 1 40%;
+    box-sizing: border-box;
+    max-width: 40%;
+}
+
+.titulo-informacion-personal {
+    color: var(--color-dorado-oscuro);
+}
+
+.divider-mb {
+    margin-bottom: 20px;
+}
+
+.informacion-personal mat-divider.d75 {
+    display: inline-block;
+    width: 75%;
+}
+
+.informacion-personal mat-divider.d90 {
+    display: inline-block;
+    align-self: center;
+    width: 90%;
+    margin: 20px 0px;
+}
+
+.sd-izq, .sd-cen {
+    font-size: 1em;
+    margin: 10px 3%;
+}
+
+.sd-izq>.negro {
+    color: var(--color-negro-fondo);
+}
+
+.sd-izq {
+    text-align: justify;
+}
+
+.sd-cen {
+    text-align: right;
+    padding-top: 30px;
+}
+
+.sd-der {
+    margin-left: 3%;
+    text-align: center;
+}
+
+.sd-der>div {
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 200px;
+}
+
+.dato-titulo, 
+.dato-content {
+    margin: 10px 0px;
+    font-size: 1.1em;
+}
+
+.dato-content {
+    font-weight: 900;
+    color: var(--color-dorado-texto);
+    text-align: left;
+    margin-left: 50px;
+}
+
+app-foto-redonda {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.sd-der>div {
+    display: inline-block;
+    margin: 20px 15px 20px 0px;
+}
+
+/**********    EMPRESAS QUE HAN CONFIADO EN MÍ    **********/
+.empresas {
+    padding: 50px 5% 25px 5%;
+    background-color: var(--color-gris-fondo);
+    color: var(--color-texto-blanco);
+}
+
+.empresas>mat-divider {
+    border-top-color: var(--color-texto-blanco);
+}
+
+.container-items-empresa {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    place-content: stretch center;
+    align-items: stretch;
+}
+
+.item-empresa {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-height: 100%;
+}
+
+/**********    BÚSCAME EN MIS REDES SOCIALES    **********/
+.redes-sociales {
+    background-image: url("../../../assets/img/fondo-smarthphone.jpg");
+}
+
+.cortina-transparente-blanca {
+    padding: 50px 5%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.icono-red-social {
+    width: 70px;
+    height: 70px;
+}
+
+.icono-red-social img{
+    width: 70px;
+    height: 70px;
+    margin: 30px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.icono-red-social img:hover {
+    transition: all 1s ease-in-out;
+}
+
+/**********    CONÓCEME MEJOR    **********/
+.conoceme-mejor-titulo {
+    margin-top: 50px;
+}
+
+.conoceme-mejor-container {
+    padding: 30px 0px;
+
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: stretch center;
+    align-items: stretch;
+}
+
+.item-conoceme-mejor {
+    flex: 1 1 33%;
+    box-sizing: border-box;
+    max-width: 33%;
+}
+
+@media screen and (min-width: 597px) and (max-width: 959px) {
+ 
+    .dato-content {
+        margin-left: 25px;
+    }
+
+}
+
+@media screen and (max-width: 599px) {
+
+    .nombre-container {
+        height: 120px;
+    }
+
+    .sd-izq {
+        text-align: center;
+        margin: 10px 2%;
+    }
+
+    .sd-cen {
+        margin: 10px 5%;
+        text-align: left;
+    }
+
+    .sd-der {
+        margin-left: 0;
+    }
+
+    .dato-content {
+        margin-left: 10px;
+    }
+    
+}
+
+
+/* lg */
+@media screen and (min-width: 1280px) {
+
+}
+
+/* md */
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+
+}
+
+/* sm */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+
+    .container-quien-soy .texto-descriptivo {
+        flex: 1 1 90%;
+        box-sizing: border-box;
+        max-width: 90%;
+    }
+    
+    .container-quien-soy .foto-cara {
+        flex: 1 1 80%;
+        box-sizing: border-box;
+        max-width: 80%;
+    }
+
+    .conoceme-mejor-container {
+        flex-flow: row wrap;
+    }
+
+    .item-conoceme-mejor {
+        flex: 1 1 50%;
+        box-sizing: border-box;
+        max-width: 50%;
+    }
+    
+}
+
+/* xs */
+@media screen and (max-width: 599px) {
+
+    .container-quien-soy .texto-descriptivo {
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+    
+    .container-quien-soy .foto-cara {
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .conoceme-mejor-container {
+        flex-direction: column;
+    }
+    
+    .item-conoceme-mejor {
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+    
+}

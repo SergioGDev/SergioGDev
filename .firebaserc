@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sergiogdev-c2f82": {
+      "hosting": {
+        "SergioGDev": [
+          "sergiogdev-c2f82"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sergiogdev-c2f82"
+  }
+}

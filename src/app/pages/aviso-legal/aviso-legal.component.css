@@ -1,0 +1,19 @@
+.texto {
+    background-color: var(--color-texto-blanco);
+    padding: 50px;
+}
+
+.titulo-parrafo {
+    margin-top: 50px;
+    font-weight: 900;
+    font-size: 2.3em;
+    text-align: center;
+}
+
+.parrafo {
+    font-weight: 100;
+    font-size: 16px;
+    text-align: justify;
+    margin: 10px 0px;
+    line-height: 18px;
+}

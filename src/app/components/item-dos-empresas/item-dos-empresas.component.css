@@ -1,0 +1,142 @@
+.container {
+    border: 2px solid var(--color-dorado-oscuro);
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px var(--color-texto-blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+.empresa-dos-container, .empresa-uno-container {
+    flex-flow: row wrap;
+}
+
+.logo-empresa {
+    flex: 1 1 15%;
+    box-sizing: border-box;
+    max-width: 15%;
+}
+
+.descripcion-empresa {
+    flex: 1 1 78%;
+    box-sizing: border-box;
+    max-width: 78%;
+}
+
+.logo-empresa {
+    padding: 5px;
+    margin-right: 20px;
+    flex: 1 1 15%;
+    box-sizing: border-box;
+    max-width: 15%;
+}
+
+.logo-empresa img {
+    width: 100%;
+    box-shadow: 1px 1px 4px var(--color-negro-fondo);
+}
+
+.descripcion-empresa, .texto-descripcion-empresa {
+    margin: 10px;
+}
+
+.nombre-empresa {
+    font-size: 1.6em;
+    font-weight: 500;
+    color: var(--color-dorado-oscuro);
+    text-shadow: 1px 1px 2px var(--color-dorado-oscuro-50);
+}
+
+.localizacion-empresa {
+    font-size: 0.8em;
+    color: var(--color-gris-fondo)
+}
+
+.texto-descripcion-empresa {
+    font-style: italic;
+    text-align: justify;
+    font-size: 0.9em;
+    color: var(--color-negro-fondo)
+}
+
+.empresa-uno-container,
+.empresa-dos-container {
+    background-color: var(--color-blanco-fondo-80);
+    padding: 10px;
+
+    flex-flow: row wrap;
+}
+
+.fondo {
+    background-image: url("../../../assets/img/fondo-item-portfolio.jpg");
+}
+
+.empresa-uno, .empresa-dos {
+    width: 70%;
+    margin: 25px 0px;
+}
+
+.empresa-uno {
+    float: left;
+}
+
+.empresa-dos {
+    float: right;
+}
+
+/* lg */
+@media screen and (min-width: 1280px) {
+
+}
+
+/* md */
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+
+}
+
+/* sm */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    
+    .empresa-uno, .empresa-dos {
+        float: none;
+        width: 96%;
+    }
+
+    .empresa-uno-container,
+    .empresa-dos-container {
+        flex-flow: row wrap;
+        place-content: stretch center;
+        align-items: stretch;
+        box-sizing: border-box;
+        display: flex; 
+    }
+
+    .descripcion-empresa {
+        flex: 1 1 70%;
+        box-sizing: border-box;
+        max-width: 70%;
+    }
+}
+
+/* xs */
+@media screen and (max-width: 599px) {
+    
+    .empresa-uno, .empresa-dos {
+        float: none;
+        width: 95%;
+    }
+
+    .descripcion-empresa {
+        flex: 1 1 98%;
+        box-sizing: border-box;
+        max-width: 98%;
+    }
+
+    .logo-empresa {
+        flex: 1 1 60%;
+        box-sizing: border-box;
+        max-width: 60%;
+    }
+
+}

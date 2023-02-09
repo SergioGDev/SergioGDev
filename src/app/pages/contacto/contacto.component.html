@@ -1,0 +1,83 @@
+<div class="container">
+
+    <!-- Panel Superior -->
+    <app-panel-superior [pathImagen]="pathImagen" [titulo]="titulo"></app-panel-superior>
+
+    <!-- Contenido del currículum -->
+    <div class="contenido-contacto ibm-plex-sans-kr">
+        <div class="ancho-acotado animate__animated animate__fadeIn animate__delay-1s">
+
+            <div class="descripcion-contacto">
+                <div class="titulo-descripcion">
+                    Contacta conmigo
+                </div>
+    
+                <div class="texto-descripcion">
+                    ¿Necesitas un desarrollador de software? ¿Quieres hablar sobre desarrollo software? ¿Has utilizado alguna tecnología últimamente y te ha gustado tanto que quieres recomendarla? <br><br>
+                    Ponte en contacto conmigo enviándome un mail a <a href="mailto:contacto@sergiogdev.com"><span class="email">contacto@sergiogdev.com</span></a> o utilizando 
+                    este formulario de contacto. También puedes hacerlo a través de mis redes sociales <a href="https://www.linkedin.com/in/sergio-garc%C3%ADa-hern%C3%A1ndez-727740114/" target="_blank"><span class="red-social">LinkedIn</span></a> 
+                    o <a href="https://twitter.com/SergioGDev_" target="_blank"><span class="red-social">Twitter</span></a>.
+                </div>
+            </div>
+    
+            <div class="formulario-contacto">
+    
+                <form (ngSubmit)="enviar()" autocomplete="off" [formGroup]="formularioContacto">
+    
+                    <!-- Nombre -->
+                    <div class="input-text">
+                        <input type="text" class="formulario-normal ibm-plex-sans-kr"
+                            formControlName="nombre"
+                            placeholder="Tu nombre"/>
+                        <span class="input-error" *ngIf="campoEsValido('nombre')">Introduce un nombre</span>
+                    </div>
+    
+                    <!-- Email -->
+                    <div class="input-text">
+                        <input type="text" class="formulario-normal ibm-plex-sans-kr"
+                            formControlName="email"
+                            placeholder="Tu email"/>
+                        <span class="input-error" *ngIf="campoEsValido('email')">Introduce un correo electrónico</span>
+                    </div>
+    
+                    <!-- Asunto -->
+                    <div class="input-text">
+                        <input type="text" class="formulario-normal ibm-plex-sans-kr"
+                            formControlName="asunto"
+                            placeholder="Asunto"/>
+                        <span class="input-error" *ngIf="campoEsValido('asunto')">Introduce un asunto</span>
+                    </div>
+    
+                    <!-- Mensaje -->
+                    <div class="input-text">
+                        <textarea type="text" 
+                            class="formulario-mensaje ibm-plex-sans-kr"
+                            formControlName="mensaje"
+                            placeholder="Mensaje"></textarea>
+                        <span class="input-error" *ngIf="campoEsValido('mensaje')">Introduce un mensaje</span>
+                    </div>
+    
+                    <div class="boton-container">
+                        <button type="submit" class="boton ibm-plex-sans-kr">Enviar mensaje</button>
+                    </div>
+
+                    <div class="loader" *ngIf="enviando">
+                        <app-loader></app-loader>
+                    </div>
+
+                    <div class="envio-correcto ibm-plex-sans-kr" *ngIf="enviado && !enviando">
+                        Mensaje enviado correctamente. Me pondré en contacto contigo en los próximos días. <br> ¡Muchas gracias por tu atención!
+                    </div>
+
+                    <div class="envio-incorrecto ibm-plex-sans-kr" *ngIf="errorEnvio && !enviando">
+                        Se ha producido un error al enviar el mensaje. Inténtelo de nuevo.
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

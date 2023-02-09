@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -91,8 +92,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "SergioGDev:build:production",
+            "firebaseProject": "sergiogdev-c2f82",
+            "firebaseHostingSite": "sergiogdev-c2f82"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "c1cdda8b-967b-466b-b89d-423ee68d046c"
   }
 }

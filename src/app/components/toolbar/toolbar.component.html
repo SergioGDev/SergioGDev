@@ -1,0 +1,64 @@
+<div class="toolbar-padre" (window:scroll)="hacerScrollable($event)" (window:resize)="hacerScrollable($event)">
+
+    <!-- Páginas web en ordenador -->
+    <div [ngClass]="{'toolbar-scrolled': this.scrollable, 'toolbar-normal': !this.scrollable}" 
+        class="animate__animated animate__fadeIn">
+
+        <!-- Logo -->
+        <div [ngClass]="{'logo-sergiogdev-scrolled': this.scrollable, 'logo-sergiogdev-normal': !this.scrollable}">
+            <img src="../../../assets/img/logo-sergiogdev-blanco.png" />
+        </div>
+
+        <!-- Iconos de redes sociales (blanco) -->
+        <app-barra-redes-sociales 
+            [ngClass]="{'redes-sociales-scrolled': this.scrollable, 
+                'redes-sociales-normal': !this.scrollable}">
+        </app-barra-redes-sociales>
+
+        <div [ngClass]="{'barra-enlaces-scrolled': this.scrollable, 'barra-enlaces-normal': !this.scrollable}">
+            <span *ngFor="let option of options" 
+                [routerLink]="option.path"
+                [ngClass]="{'toolbar-item-scrolled': this.scrollable, 'toolbar-item-normal': !this.scrollable}"
+                routerLinkActive="link-selected"
+                [routerLinkActiveOptions]= "{exact: true}">
+                    {{ option.text }}
+            </span>
+        </div>
+
+
+        <div class="content-boton-menu" [ngClass]="{'display-none': !this.responsive}" (click)="pulsarBotonMenuResponsive()">
+            <div class="boton-menu" 
+                [ngClass]="{'open': this.menuOpen}">
+                <div class="boton-menu-burguer"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="menu-responsive" [ngClass]="{'open animate__animated animate__slideInDown': this.menuOpen, 'display-none': !this.responsive}">
+        <span *ngFor="let option of options" [routerLink]="option.path"
+            class="toolbar-item-responsive" [ngClass]="{'open': this.menuOpen}"
+            routerLinkActive="link-responsive-selected"
+            [routerLinkActiveOptions]= "{exact: true}"
+            (click)="pulsarBotonMenuResponsive()">
+            {{ option.text }}
+        </span>
+
+        <mat-divider [ngClass]="{'display-none': !this.responsive}" ></mat-divider>
+
+         <!-- Iconos de redes sociales (blanco) -->
+         <div class="redes-sociales-responsive" [ngClass]="{'display-none': !this.responsive}" >
+            <span *ngFor="let redSocial of redesSociales"
+                class="icono-red-social" [title]="redSocial.title">
+                <img [src]="redSocial.pathResponsive" 
+                    (mouseout)="redSocial.pathResponsive = redSocial.pathNegro" 
+                    (mouseover)="redSocial.pathResponsive = redSocial.path"/>
+            </span>
+        </div>
+    </div>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

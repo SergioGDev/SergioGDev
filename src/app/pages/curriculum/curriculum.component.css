@@ -1,0 +1,26 @@
+ /* Contenido curriculum */
+
+ .contenido-curriculum {
+     padding: 50px 5%;
+     background-color: var(--color-texto-blanco);
+ }
+
+ .titulo-experiencia-laboral,
+ .titulo-formacion {
+    color: var(--color-gris-fondo);
+}
+
+.divider-mb {
+    margin-bottom: 40px;
+}
+
+.titulo-formacion {
+    margin-top: 50px;
+}
+
+
+@media screen and (max-width: 599px) {
+    .contenido-curriculum {
+        padding: 50px 2%;
+    }
+}

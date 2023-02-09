@@ -1,0 +1,33 @@
+.texto {
+    background-color: var(--color-texto-blanco);
+    padding: 50px;
+}
+
+.titulo-parrafo {
+    margin-top: 50px;
+    font-weight: 900;
+    font-size: 26px;
+    text-align: center;
+}
+
+.subtitulo-parrafo {
+    font-weight: 900;
+    font-size: 22px;
+    text-align: center;
+}
+
+.parrafo {
+    font-weight: 100;
+    font-size: 16px;
+    text-align: justify;
+    margin: 10px 0px;
+    line-height: 18px;
+}
+
+.negrita {
+    font-weight: 900;
+}
+
+a {
+    color: var(--color-dorado-oscuro);
+}

@@ -1,0 +1,132 @@
+.container {
+    background-color: var(--color-gris-fondo);
+    color: var(--color-texto-blanco);
+    text-align: center;
+
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.superior {
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+
+.icono-sergiogdev {
+    text-align: center;
+    width: 100%;
+    height: 200px;
+
+    flex: 1 1 33%;
+    box-sizing: border-box;
+    max-width: 33%;
+}
+
+.icono-sergiogdev img {
+    height: 100%;
+}
+
+.enlace-legal {
+    margin: 10px 20px;
+    font-size: 14px;
+    color: var(--color-texto-blanco);
+    cursor: pointer;
+    transition: 0.15s all linear;
+}
+
+.enlace-legal:hover {
+    color: var(--color-dorado);
+    transition: 0.15s all linear;
+}
+
+.enlaces-contenido-legal, .redes-sociales {
+    text-align: center;
+}
+
+.enlaces-contenido-legal {
+    margin-bottom: 15px;
+
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    display: flex;
+    align-self: center;
+}
+
+.developer {
+    background-color: var(--color-negro-fondo);
+    color: var(--color-texto-blanco);
+    font-size: 14px;
+    height: 50px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.enlace-developer, a {
+    color: var(--color-dorado);
+    cursor: pointer;
+    transition: 0.15s all linear;
+    text-decoration: none;
+}
+
+.enlace-developer:hover {
+    transition: 0.15s all linear;
+}
+
+.datos>span {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.datos>span>img {
+    height: 16px;
+    margin-right: 5px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.negrita{
+    font-weight: 900;
+}
+
+/* lg */
+@media screen and (min-width: 1280px) {
+    
+}
+
+/* md */
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+
+}
+
+/* sm */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .icono-sergiogdev.datos {
+        max-width: 49%;
+    }
+}
+
+/* xs */
+@media screen and (max-width: 599px) {
+    .icono-sergiogdev.datos {
+        max-width: 98%;
+    }
+
+    .enlaces-contenido-legal {
+        flex-direction: column;
+    }
+}

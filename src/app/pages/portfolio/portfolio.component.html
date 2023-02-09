@@ -1,0 +1,19 @@
+<div class="container">
+
+    <!-- Panel Superior -->
+    <app-panel-superior [pathImagen]="pathImagen" [titulo]="titulo"></app-panel-superior>
+
+    <!-- Contenido del portfolio -->
+    <div class="contenido-portfolio">
+        <div class="ancho-acotado animate__animated animate__fadeIn animate__delay-1s">
+            
+            <div class="item-portfolio" *ngFor="let item of vPortfolio">
+                <app-item-portfolio [item]="item"></app-item-portfolio>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <app-footer></app-footer>
+</div>

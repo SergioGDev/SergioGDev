@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="superior">
+        
+        <div class="icono-sergiogdev datos">
+            <img src="../../../assets/img/logo-sergiogdev-blanco.png"/>
+        </div>
+        
+    </div>
+    
+
+    <div class="redes-sociales">
+        <app-barra-redes-sociales></app-barra-redes-sociales>
+    </div>
+
+    <div class="enlaces-contenido-legal source-code-pro">
+        <span class="enlace-legal" *ngFor="let enlace of enlacesLegales"
+            [routerLink]="enlace.path">
+            {{ enlace.text }}
+        </span>
+    </div>
+
+</div>
+
+<div class="developer source-code-pro">
+   © 2021 SergioGDev. Desarrollado por 
+   <span class="enlace-developer"><a href="https://sergiogdev.com/" target="_blank">Sergio García Hernández</a></span> 
+</div>

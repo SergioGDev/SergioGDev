@@ -1,0 +1,441 @@
+/****************************************/
+/*          TOOLBAR SUPERIOR            */
+/* AUTOR:   Sergio García Hernández     */
+/****************************************/
+
+/* Toolbar */
+.toolbar-normal, .toolbar-scrolled {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.toolbar-normal {
+    position: absolute;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));    
+    /* animation: toolbar-anim 0.3s ease-out; */
+    transition: height 0.3s ease-out, background 0.3s ease-in;
+}
+
+.toolbar-scrolled, .toolbar-responsive {
+    position: fixed;
+    height: 100px;
+    /* animation: toolbar-anim 0.3s reverse; */
+    background-color: var(--color-negro-fondo);
+    transition: height 0.3s ease-out 0.1s, background 0.3s ease-in;
+}
+
+/* Logo */
+.logo-sergiogdev-scrolled,
+.logo-sergiogdev-normal {
+    height: 100px;
+    margin-left: 25px;
+}
+
+.logo-sergiogdev-normal {
+    margin-top: 50px;
+    opacity: 0;
+}
+
+.logo-sergiogdev-scrolled {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.logo-sergiogdev-normal img,
+.logo-sergiogdev-scrolled img {
+    height: 100%;
+}
+
+/* Barra de enlaces */
+.barra-enlaces-normal, .barra-enlaces-scrolled {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    text-align: center;
+    color: var(--color-texto-blanco);
+    background-color: transparent;
+}
+
+.barra-enlaces-normal {
+    padding-top: 90px;
+}
+
+.barra-enlaces-scrolled {
+    padding-top: 30px;
+}
+
+.barra-enlaces-responsive {
+    display: none;
+}
+
+/* Toolbar item */
+.toolbar-item-normal, .toolbar-item-scrolled {
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'PT Mono', sans-serif;
+    transition: border 0.2s ease-in right;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.toolbar-item-normal {
+    margin: 0px 5px;
+    animation: toolbar-item-anim;
+    /* -webkit-animation: 1s toolbar-item-anim;
+    -moz-animation: 1s toolbar-item-anim; */
+    transition: margin 0.3s;
+}
+
+.toolbar-item-scrolled {
+    margin: 0px 1px;
+    /* -moz-animation: 1s toolbar-item-anim reverse;
+    -webkit-animation: 1s toolbar-item-anim reverse; */
+    animation: toolbar-item-anim reverse;
+    transition: margin 0.3s ease-out;
+}
+
+.toolbar-item-normal::after, .toolbar-item-scrolled::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--color-dorado);
+    transition: width .3s;
+    margin-top: 5px;
+}
+
+.link-selected::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--color-dorado);
+    margin-top: 5px;
+    width: 100%;
+}
+
+.toolbar-item-normal:hover::after, .toolbar-item-scrolled:hover::after {
+    width: 100%;
+}
+
+/* Icono sergiogdev */
+.icono-sergiogdev-normal, .icono-sergiogdev-scrollable, .icono-sergiogdev-responsive{
+    position: absolute;
+    top: 50px;
+}
+
+.icono-sergiogdev-normal, .icono-sergiogdev-scrollable {
+    left: 5%;
+}
+
+.icono-sergiogdev-responsive {
+    left: calc(50% - 61px);
+}
+
+.icono-sergiogdev-normal {
+    width: 200px;
+    top: 80px;
+    transition: width 0.3s ease-out;
+}
+
+.icono-sergiogdev-scrollable, .icono-sergiogdev-responsive {
+    width: 120px;
+    top: 8px;
+    transition: width 0.3s ease-out;
+}
+
+.icono-sergiogdev-normal img, .icono-sergiogdev-scrollable img, .icono-sergiogdev-responsive img{
+    height: 100%;
+    width: 100%;
+    border-radius: 2%;
+    border: 3px solid var(--color-dorado);
+    transition: all 0.3s linear;
+}
+
+/* Barra de redes sociales */
+.redes-sociales-normal {
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    left: 5%;
+    text-align: center;
+}
+
+.redes-sociales-scrolled {
+    display: none;
+}
+
+.redes-sociales-normal {
+    z-index: 5;
+}
+
+.icono-red-social {
+    width: 20px;
+    height: 20px;
+}
+
+.icono-red-social img{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.icono-red-social img:hover {
+    transition: all 1s ease-in-out;
+}
+
+/* Botón de reserva */
+.reservar-normal, .reservar-scrollable {
+    position: absolute;
+    right: 5%;
+    padding: 12px 20px;
+    background-color: var(--color-negro-fondo);
+    color: var(--color-texto-blanco);
+    border: 2px solid var(--color-dorado);
+    border-radius: 2%;
+    font-size: 16px;
+    font-family: 'Cairo', serif;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.reservar-normal {
+    background-color: transparent;
+    top: 115px; 
+    transition:  background-color 0.3s ease-out;
+}
+
+.reservar-normal:hover {
+    background-color: var(--color-negro-fondo);
+    transition: all 0.1s linear;
+}
+
+
+.reservar-scrollable {
+    background-color: var(--color-negro-fondo);
+    top: 25px;
+    transition: background-color 0.3s ease-out;
+}
+
+.reservar-scrollable:hover {
+    color: var(--color-negro-fondo);
+    background-color: var(--color-texto-blanco);
+    transition: all 0.1s linear;
+}
+
+/* Botón menú burguer */
+.content-boton-menu {
+    position: absolute;
+    display: flex;
+    top: 25px;
+    right: 25px;
+}
+
+.boton-menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.boton-menu-burguer {
+    width: 20px;
+    height: 3px;
+    background-color: var(--color-texto-blanco);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.boton-menu-burguer::before, .boton-menu-burguer::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: var(--color-texto-blanco);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.boton-menu-burguer::before {
+    transform: translateY(-8px);
+}
+
+.boton-menu-burguer::after {
+    transform: translateY(8px);
+}
+
+.boton-menu.open .boton-menu-burguer {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.boton-menu.open .boton-menu-burguer::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.boton-menu.open .boton-menu-burguer::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.menu-responsive {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0%;
+    z-index: 500;
+    background-color: var(--color-dorado);
+    border-bottom: 2px solid var(--color-negro-fondo);
+}
+
+.menu-responsive.open {
+    padding-top: 40%;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.container.menu-opened {
+    display: none;
+}
+
+.toolbar-item-responsive {
+    display: none;
+}
+
+.toolbar-item-responsive.open {
+    display: block;
+    text-align: center;
+    font-family: 'PT Mono', serif;
+    text-transform: uppercase;
+    padding: 15px 0px;
+    font-size: 20px;
+    color: var(--color-negro-fondo);
+}
+
+.link-responsive-selected {
+    text-decoration: underline;
+}
+
+.mat-divider {
+    display: block;
+    margin: 30px;
+    border-top-width: 1px;
+    background: var(--color-texto-blanco);
+    border-top-style: solid;
+}
+
+.redes-sociales-responsive {
+    text-align: center;
+}
+
+.display-none {
+    display: none;
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+}
+
+/* Animaciones */
+@keyframes toolbar-item-anim {
+    0% { margin: 0px 10px; }
+    40% { margin: 0px 14px; }
+    100% { margin: 0px 2px; }
+}
+
+@keyframes toolbar-anim {
+    0% { height: 90px; }
+    100% { height: 100px; }
+}
+
+@keyframes icono-sergiogdev-anim {
+    0% { left: calc(50% - 75px) }
+    100% { left: 5% }
+}
+
+@keyframes toolbar-item-hover-anim {
+    0% { border-bottom: 0px solid var(--color-dorado);}
+    100% { border-bottom: 2px solid var(--color-dorado); }
+}
+
+
+
+/* lg */
+@media screen and (min-width: 1280px) {
+    .boton-menu {
+        display: none;
+    }
+}
+
+/* md */
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+    .boton-menu {
+        display: none;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .toolbar {
+        padding: 0px 10px;
+    }
+
+    .menu-responsive.open {
+        padding-top: 20%;
+        height: 90%;
+    }
+    
+    .toolbar-item-scrolled, .toolbar-item-normal {
+        display: none;
+    }
+}
+
+/* xs */
+@media screen and (max-width: 599px) {
+
+    .toolbar {
+        padding: 0px 10px;
+    }
+
+    .menu-responsive.open {
+        padding-top: 40%;
+        height: 85%;
+    }
+    
+    .toolbar-item-scrolled, .toolbar-item-normal {
+        display: none;
+    }
+
+}
+
+/********************
+           /        +
+          **        +
+         ****       +
+        [*  *]      +
+          `´        +
+       >--..--<     +
+          ||        +
+          /\        +
+       o_    _o     +
+********************/

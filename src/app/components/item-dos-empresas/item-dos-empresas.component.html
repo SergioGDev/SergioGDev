@@ -1,0 +1,74 @@
+<!-- EMPRESA UNO -->
+<div class="container empresa-uno">
+
+    <a [href]="itemEmpresaDuo.empresaUno.url" target="_blank">
+
+        <div class="fondo">
+            <div class="empresa-uno-container">
+                
+                <div class="logo-empresa">
+                    <img [src]="getPathFoto(itemEmpresaDuo.empresaUno.pathFoto)" />
+                </div>
+        
+                <div class="descripcion-empresa">
+                    <!-- Nombre -->
+                    <div class="nombre-empresa ibm-plex-sans-hebrew">
+                        {{ itemEmpresaDuo.empresaUno.nombre }}
+                    </div>
+        
+                    <!-- Localización -->
+                    <div class="localizacion-empresa ibm-plex-sans-kr">
+                        {{ itemEmpresaDuo.empresaUno.direccion }}
+                    </div>
+        
+                    <!-- Descripción empresa -->
+                    <div class="texto-descripcion-empresa ibm-plex-sans-kr">
+                        {{ itemEmpresaDuo.empresaUno.descripcion }}
+                    </div>
+    
+                </div>
+
+        </div>
+
+
+        </div>
+    </a>
+
+</div>
+
+
+<!-- EMPRESA DOS -->
+<div class="container empresa-dos" *ngIf="itemEmpresaDuo.empresaDos">
+
+    <a [href]="itemEmpresaDuo.empresaDos.url" target="_blank">
+        <div class="fondo">
+            <div class="empresa-dos-container">
+    
+                <div class="logo-empresa">
+                    <img [src]="getPathFoto(itemEmpresaDuo.empresaDos.pathFoto)" />
+                </div>
+        
+                <div class="descripcion-empresa">
+                    <!-- Nombre -->
+                    <div class="nombre-empresa ibm-plex-sans-hebrew">
+                        {{ itemEmpresaDuo.empresaDos.nombre }}
+                    </div>
+        
+                    <!-- Localización -->
+                    <div class="localizacion-empresa ibm-plex-sans-kr">
+                        {{ itemEmpresaDuo.empresaDos.direccion }}
+                    </div>
+        
+                    <!-- Descripción empresa -->
+                    <div class="texto-descripcion-empresa ibm-plex-sans-kr">
+                        {{ itemEmpresaDuo.empresaDos.descripcion }}
+                    </div>
+                </div>
+    
+            </div>
+
+        </div>
+
+    </a>
+
+</div>

@@ -1,0 +1,118 @@
+<div class="container">
+    <!-- Panel superior con nombre del restaurante y localización -->
+    <div class="panel-superior">
+        <div class="cortina-transparente">
+
+            <div class="spacer"></div>
+
+            <div class="nombre-container animate__animated animate__fadeIn">
+                <img src="../../../assets/img/logo-sergiogdev-blanco.png">
+            </div>
+
+            <div class="texto-aux-panel-superior cutive-mono animate__animated animate__fadeIn animate__delay-1s">
+                {{ textoSubtitulo }}
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Información personal -->
+    <div class="informacion-personal">
+
+        <div class="cortina-transparente-blanca">
+
+            <div class="ancho-acotado animate__animated animate__fadeIn animate__delay-2s">
+
+                <div class="titulo-informacion-personal titulo-seccion ubuntu"> {{ tituloInfoPersonal | uppercase }} </div>
+    
+                <mat-divider class="divider-mb"></mat-divider>
+    
+                <div class="container-quien-soy">
+    
+                    <div class="texto-descriptivo sd-izq source-code-pro">
+    
+                        <span class="negro">{{ msgQuienSoy1 }} <b> {{ msgNombre }} </b> {{ msgQuienSoy2 }}</span>
+                        <br><br>
+                        <span class="negro">
+                            <b> {{ msgQuienSoy3 }} </b>
+                        </span>
+        
+                    </div>
+    
+                    <div class="foto-cara sd-der">
+                        <div>
+                            <app-foto-redonda [pathFoto]="pathFotoSergio"></app-foto-redonda>
+                        </div>
+                    </div>
+    
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- Empresas que confían en mí -->
+    <div class="empresas">
+        <div class="ancho-acotado animate__animated animate__fadeIn animate__delay-2s">
+
+            <div class="empresas-titulo titulo-seccion ubuntu">
+                {{ tituloEmpresas | uppercase }}
+            </div>
+    
+            <mat-divider class="divider-mb"></mat-divider>
+    
+            <div class="container-items-empresa" *ngIf="!cargandoEmpresas">
+                <div class="item-empresa" *ngFor="let item of vEmpresasDuo">
+                    <app-item-dos-empresas [itemEmpresaDuo]="item"></app-item-dos-empresas>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="redes-sociales">
+        <div class="cortina-transparente-blanca">
+            <div class="ancho-acotado animate__animated animate__fadeIn animate__delay-2s">
+                
+                <div class="redes-sociales-titulo titulo-seccion ubuntu">
+                    {{ tituloRedesSociales | uppercase }}
+                </div>
+    
+                <mat-divider class="divider-mb"></mat-divider>
+    
+                <div class="text-center">
+                    <span *ngFor="let redSocial of redesSociales" class="icono-red-social" [title]="redSocial.title">
+                        <a [href]="redSocial.src" target="_blank">
+                            <img [src]="redSocial.pathUsed" (mouseout)="redSocial.pathUsed = redSocial.pathNegro"
+                                (mouseover)="redSocial.pathUsed = redSocial.pathHover" />
+                        </a>
+                    </span>
+                </div>
+
+                <!-- Conóceme mejor -->
+                <div class="conoceme-mejor-titulo titulo-seccion ubuntu">
+                    {{ tituloConocemeMejor | uppercase }}
+                </div>
+    
+                <mat-divider class="divider-mb"></mat-divider>
+
+                <div class="conoceme-mejor-container">
+                    <div class="item-conoceme-mejor" *ngFor="let item of vOpcionesConocemeMejor">
+                        <app-item-conoceme-mejor [item]="item"></app-item-conoceme-mejor>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <app-footer></app-footer>
+
+</div>
