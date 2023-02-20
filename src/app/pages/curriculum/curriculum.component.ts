@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
-import { ItemEmpresa, ItemCurriculumFormacion, ItemCurriculumEmpleo, ItemCurriculumIdioma } from '../../interfaces/links.interface';
-import { ExperienciaLaboralService } from '../../services/experiencia-laboral.service';
-import { IdiomasService } from '../../services/idiomas.service';
-import { FormacionAcademicaService } from '../../services/formacion-academica.service';
-import { FormacionComplementariaService } from '../../services/formacion-complementaria.service';
+import { ItemCurriculumFormacion, ItemCurriculumEmpleo, ItemCurriculumIdioma } from '../../interfaces/links.interface';
 import { FirebaseExperienciaLaboralService } from '../../services/firebase-experiencia-laboral.service';
 import { FirebaseFormacionAcademicaService } from '../../services/firebase-formacion-academica.service';
 import { FirebaseFormacionComplementariaService } from '../../services/firebase-formacion-complementaria.service';
@@ -25,28 +20,23 @@ export class CurriculumComponent implements OnInit {
     tituloEmpleo: string = "Experiencia laboral";
     vExperienciaLaboral: ItemCurriculumEmpleo[] = [];
     cargandoVExperienciaLaboral: boolean = false;
-    // vEmpleos: ItemCurriculumEmpleo[] = this.dataService.getItemsCurrirulumEmpresas();
   
     /**********   FORMACIÓN ACADÉMICA   **********/
     tituloFormacionAcademica: string = "Formación académica";
     vFormacionAcademica: ItemCurriculumFormacion[] = [];
     cargandoVFormacionAcademica: boolean = false;
-    // vFormacionAcademica: ItemCurriculumFormacion[] = this.dataService.getItemsCurrirulumFormacionAcademica();
   
     /**********   FORMACIÓN COMPLEMENTARIA   **********/
     tituloFormacionComplementaria: string = "Formacion complementaria";
     vFormacionComplementaria: ItemCurriculumFormacion[] = [];
     cargandoVFormacionComplementaria: boolean = false;
-    // vFormacionComplementaria: ItemCurriculumFormacion[] = this.dataService.getItemsCurrirulumFormacionComplementaria();
   
     /**********   IDIOMAS   **********/
     tituloIdiomas: string = "Idiomas";
     vIdiomas: ItemCurriculumIdioma[] = [];
     cargandoVIdiomas: boolean = false;
-    // vIdiomas: ItemCurriculumIdioma[] = this.dataService.getItemsCurrirulumIdiomas();
 
   constructor(
-    private dataService: DataService,
     private fbExperienciaLaboralService: FirebaseExperienciaLaboralService,
     private fbFormacionAcademicaService: FirebaseFormacionAcademicaService,
     private fbFormacionComplementariaService: FirebaseFormacionComplementariaService,
@@ -60,7 +50,7 @@ export class CurriculumComponent implements OnInit {
     this.fbExperienciaLaboralService.getExperienciaLaboralCompleta()
       .subscribe( (respData) => {
         this.vExperienciaLaboral = respData;
-        this.vExperienciaLaboral.reverse();
+        this.vExperienciaLaboral.sort( (a, b) => a.orden > b.orden ? -1 : 1)
         this.cargandoVExperienciaLaboral = false;
       })
 

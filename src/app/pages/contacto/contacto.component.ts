@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MensajeFormulario, RespuestaFormspree } from '../../interfaces/links.interface';
-import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-contacto',
@@ -11,8 +10,7 @@ import { DataService } from '../../services/data.service';
 export class ContactoComponent implements OnInit {
 
   constructor(
-    private fb: FormBuilder,
-    private dataService: DataService
+    private fb: FormBuilder
   ) { }
   
   ngOnInit(): void {
@@ -46,28 +44,28 @@ export class ContactoComponent implements OnInit {
 
     const mensaje: MensajeFormulario = this.formularioContacto.value;
     this.enviando = true;
-    this.dataService.enviarFormularioContacto(mensaje)
-      .subscribe(
-        ({type, msg}) => {
-            if (type === 'ok') {
-              this.enviado = true;
-              this.errorEnvio = false;
-              this.enviando = false;
+    // this.dataService.enviarFormularioContacto(mensaje)
+    //   .subscribe(
+    //     ({type, msg}) => {
+    //         if (type === 'ok') {
+    //           this.enviado = true;
+    //           this.errorEnvio = false;
+    //           this.enviando = false;
               
-              // Reseteamos el formulario
-              this.formularioContacto.reset();
-            } else {
-              this.enviado = false;
-              this.errorEnvio = true;
-              this.enviando = false;
-            }
-          },
-          err => {
-            this.enviado = false;
-            this.errorEnvio = true;
-            this.enviando = false;
-        }
-      );
+    //           // Reseteamos el formulario
+    //           this.formularioContacto.reset();
+    //         } else {
+    //           this.enviado = false;
+    //           this.errorEnvio = true;
+    //           this.enviando = false;
+    //         }
+    //       },
+    //       err => {
+    //         this.enviado = false;
+    //         this.errorEnvio = true;
+    //         this.enviando = false;
+    //     }
+    //   );
 
     
   }

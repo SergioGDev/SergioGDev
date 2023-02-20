@@ -48,6 +48,7 @@ export interface ItemCurriculumEmpleo {
     descripcionFrontend?:       string;
     otrosDatosDesarrollo?:      string;
     otraDescripcion?:           string;
+    orden:                      number;
 }
 
 /* Datos pertenecientes a la formación en el currículum */

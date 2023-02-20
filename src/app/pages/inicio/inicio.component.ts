@@ -36,8 +36,6 @@ export class InicioComponent implements OnInit {
   tituloEmpresas: string = "Estas empresas han confiado en mí";
   vEmpresas: ItemEmpresa[] = [];
   vEmpresasDuo: ItemEmpresaDuo[] = [];
-  // vEmpresas: ItemEmpresa[] = this.dataService.getEmpresas();
-  // vEmpresasDuo: ItemEmpresaDuo[] = this.dataService.getEmpresasDuo();
 
   // ********    BÚSCAME EN MIS REDES SOCIALES    ******** //
   tituloRedesSociales: string = "Búscame en mis redes sociales";
